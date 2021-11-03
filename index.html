@@ -35,10 +35,10 @@
                         return;
                     } else if (computerSelection == "paper") {
                         console.log("You Lose! Paper beats Rock");
-                        return;
+                        return computerCount++;
                     } else {
                         console.log("You Win! Rocks beats Scissors");
-                        return;
+                        return playerCount++;
                     };
                 case "paper":
                     if (computerSelection == "paper") {
@@ -46,10 +46,10 @@
                         return;
                     } else if (computerSelection == "scissors") {
                         console.log("You Lose! Scissors beats Paper");
-                        return;
+                        return computerCount++;
                     } else {
                         console.log("You Win! Paper beats Rock");
-                        return;
+                        return playerCount++;
                     };
                 case "scissors":
                     if (computerSelection == "scissors") {
@@ -57,29 +57,43 @@
                         return;
                     } else if (computerSelection == "rock") {
                         console.log("You Lose! Rock beats Scissors");
-                        return;
+                        return computerCount++;
                     } else {
                         console.log("You Win! Scissors beats Paper");
-                        return;
+                        return playerCount++;
                     };
             };
         }
 
+        let playerCount = 0;
+        let computerCount = 0;
 
+        for (i = 0; i < 5; i++) {
         // player picks rock paper scissors
         let playerSelection = prompt("Rock, Paper, Scissors?");
         playerSelection = playerSelection.toLowerCase();
 
         // check for valid input
+        let valid = false;
+        while (!valid)
         if ((playerSelection != "rock") && (playerSelection != "paper") && (playerSelection != "scissors")) {
             playerSelection = prompt("Rock, Paper, Scissors?", "Please Enter Rock, Paper, or Scissors");
             playerSelection = playerSelection.toLowerCase();
+        } else {
+            valid = true;
         };
 
-           
-
         computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
+        playRound(playerSelection, computerSelection)
+    };
+
+    if (playerCount > computerCount) {
+        console.log("You Win!");
+    } else if (playerCount < computerCount) {
+        console.log("Computer Wins!");
+    } else {
+        console.log("It's a Tie");
+    };
     </script>
 </body>
 
