@@ -71,30 +71,13 @@
         playerSelection = playerSelection.toLowerCase();
 
         // check for valid input
-        // if ((playerSelection != "rock") || (playerSelection != "paper") ) {
-        //     alert("you did not select rock or paper " + playerSelection)
-        // } else {
-        //     alert("you selelct rock or paper "+ playerSelection)
-        // }
-
-        // if (!(playerSelection == "rock") || !(playerSelection == "paper") ) {
-        //     alert("you did not select rock or paper   " + playerSelection)
-        // } else {
-        //     alert("you selelct rock or paper   "+ playerSelection)
-        // }
-
-        let i = 0;
-        while (i < 1) {
-            if ((playerSelection == "rock") || (playerSelection == "paper") || (playerSelection == "scissors")) {
-                i = 1;
-            } else {
-                playerSelection = prompt("Rock, Paper, Scissors?", "Please Enter Rock, Paper, or Scissors");
-                playerSelection = playerSelection.toLowerCase();
-            };
+        if ((playerSelection != "rock") && (playerSelection != "paper") && (playerSelection != "scissors")) {
+            playerSelection = prompt("Rock, Paper, Scissors?", "Please Enter Rock, Paper, or Scissors");
+            playerSelection = playerSelection.toLowerCase();
         };
 
+           
 
-        let 
         computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
     </script>
